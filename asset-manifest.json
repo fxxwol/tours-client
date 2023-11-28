@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tours-client/static/css/main.7acaea2f.css",
+    "main.js": "/tours-client/static/js/main.07d3183d.js",
+    "index.html": "/tours-client/index.html",
+    "main.7acaea2f.css.map": "/tours-client/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/tours-client/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}

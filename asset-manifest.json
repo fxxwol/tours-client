@@ -1,28 +1,29 @@
 {
   "files": {
     "main.css": "/tours-client/static/css/main.cd2e038f.css",
-    "main.js": "/tours-client/static/js/main.bec6649c.js",
-    "static/js/977.d8055d15.chunk.js": "/tours-client/static/js/977.d8055d15.chunk.js",
-    "static/js/716.3f04939b.chunk.js": "/tours-client/static/js/716.3f04939b.chunk.js",
-    "static/js/926.b7e51a44.chunk.js": "/tours-client/static/js/926.b7e51a44.chunk.js",
+    "main.js": "/tours-client/static/js/main.0711d2f8.js",
+    "static/js/977.4ca62655.chunk.js": "/tours-client/static/js/977.4ca62655.chunk.js",
+    "static/js/716.8d83e9ea.chunk.js": "/tours-client/static/js/716.8d83e9ea.chunk.js",
+    "static/js/324.6ab9415a.chunk.js": "/tours-client/static/js/324.6ab9415a.chunk.js",
     "static/js/72.16688ea8.chunk.js": "/tours-client/static/js/72.16688ea8.chunk.js",
-    "static/js/396.ae75b34b.chunk.js": "/tours-client/static/js/396.ae75b34b.chunk.js",
+    "static/js/885.3340e52d.chunk.js": "/tours-client/static/js/885.3340e52d.chunk.js",
     "static/js/568.64948b21.chunk.js": "/tours-client/static/js/568.64948b21.chunk.js",
-    "static/js/124.163fcee1.chunk.js": "/tours-client/static/js/124.163fcee1.chunk.js",
+    "static/js/752.14c182b3.chunk.js": "/tours-client/static/js/752.14c182b3.chunk.js",
     "static/media/Manrope.woff2": "/tours-client/static/media/Manrope.02fde8ae851aacf5c6a9.woff2",
+    "static/media/sprite.svg": "/tours-client/static/media/sprite.d4d399d02342a8874cdacb9c731cfc65.svg",
     "index.html": "/tours-client/index.html",
     "main.cd2e038f.css.map": "/tours-client/static/css/main.cd2e038f.css.map",
-    "main.bec6649c.js.map": "/tours-client/static/js/main.bec6649c.js.map",
-    "977.d8055d15.chunk.js.map": "/tours-client/static/js/977.d8055d15.chunk.js.map",
-    "716.3f04939b.chunk.js.map": "/tours-client/static/js/716.3f04939b.chunk.js.map",
-    "926.b7e51a44.chunk.js.map": "/tours-client/static/js/926.b7e51a44.chunk.js.map",
+    "main.0711d2f8.js.map": "/tours-client/static/js/main.0711d2f8.js.map",
+    "977.4ca62655.chunk.js.map": "/tours-client/static/js/977.4ca62655.chunk.js.map",
+    "716.8d83e9ea.chunk.js.map": "/tours-client/static/js/716.8d83e9ea.chunk.js.map",
+    "324.6ab9415a.chunk.js.map": "/tours-client/static/js/324.6ab9415a.chunk.js.map",
     "72.16688ea8.chunk.js.map": "/tours-client/static/js/72.16688ea8.chunk.js.map",
-    "396.ae75b34b.chunk.js.map": "/tours-client/static/js/396.ae75b34b.chunk.js.map",
+    "885.3340e52d.chunk.js.map": "/tours-client/static/js/885.3340e52d.chunk.js.map",
     "568.64948b21.chunk.js.map": "/tours-client/static/js/568.64948b21.chunk.js.map",
-    "124.163fcee1.chunk.js.map": "/tours-client/static/js/124.163fcee1.chunk.js.map"
+    "752.14c182b3.chunk.js.map": "/tours-client/static/js/752.14c182b3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.bec6649c.js"
+    "static/js/main.0711d2f8.js"
   ]
 }

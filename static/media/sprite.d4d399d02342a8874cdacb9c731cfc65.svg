@@ -1,0 +1,11 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-x" viewBox="0 0 32 32">
+<path fill="#000"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M24 8l-16 16"></path>
+<path fill="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M8 8l16 16"></path>
+</symbol>
+<symbol id="icon-check-verified" viewBox="0 0 32 32">
+<path fill="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M12 16l2.667 2.667 6-6M9.778 5.092c1.072-0.086 2.089-0.507 2.908-1.204 1.91-1.627 4.718-1.627 6.628 0 0.818 0.697 1.836 1.119 2.908 1.204 2.501 0.2 4.487 2.186 4.687 4.687 0.086 1.072 0.507 2.089 1.204 2.908 1.627 1.91 1.627 4.718 0 6.628-0.697 0.818-1.119 1.836-1.204 2.908-0.2 2.501-2.186 4.487-4.687 4.687-1.072 0.086-2.089 0.507-2.908 1.204-1.91 1.627-4.718 1.627-6.628 0-0.818-0.697-1.836-1.119-2.908-1.204-2.501-0.2-4.487-2.186-4.687-4.687-0.086-1.072-0.507-2.089-1.204-2.908-1.627-1.91-1.627-4.718 0-6.628 0.697-0.818 1.119-1.836 1.204-2.908 0.2-2.501 2.186-4.487 4.687-4.687z"></path>
+</symbol>
+</defs>
+</svg>

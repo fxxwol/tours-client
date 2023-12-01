@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Input, InputLabel } from '@mui/material';
 import variables from 'global/Variables';
 import styled from 'styled-components';
 export const AuthForm = styled.form`
@@ -42,4 +42,18 @@ export const FormTitle = styled.h2`
 `;
 export const AuthHelperText = styled.p`
   color: rgba(80, 78, 78, 0.76);
+`;
+
+export const InputField = styled(Input)`
+  && {
+    &:after {
+      border-bottom: 2px solid ${variables.greenText};
+    }
+  }
+`;
+
+export const Label = styled(InputLabel)`
+  &&.Mui-focused {
+    color: ${variables.greenText};
+  }
 `;

@@ -4,6 +4,7 @@ import AppBar from './AppBar/AppBar';
 import { Container } from '@mui/material';
 import Notiflix from 'notiflix';
 import { useEffect } from 'react';
+import Loader from './Loader/Loader';
 
 function Layout() {
   useEffect(() => {
@@ -23,7 +24,7 @@ function Layout() {
     <>
       <Container>
         <AppBar />
-        <Suspense>
+        <Suspense fallback={<Loader/>}>
           <Outlet />
         </Suspense>
       </Container>

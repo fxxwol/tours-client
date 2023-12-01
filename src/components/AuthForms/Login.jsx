@@ -1,5 +1,5 @@
-import { FormControl, Input, InputLabel } from '@mui/material';
-import { SubmitBtn } from './AuthForms.styled';
+import { FormControl } from '@mui/material';
+import { InputField, Label, SubmitBtn } from './AuthForms.styled';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/authThunk';
@@ -11,6 +11,7 @@ import {
   FormTitle,
 } from './AuthForms.styled';
 import { useAuth } from 'hooks/useAuth';
+import { theme } from 'global/Theme';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -46,14 +47,17 @@ function LoginForm() {
       formik.resetForm();
     },
   });
+  console.log(theme.palette.primary.main);
 
   return (
     <AuthFormCard>
       <FormTitle>Sign in to Journeezy</FormTitle>
       <AuthForm onSubmit={formik.handleSubmit}>
         <FormControl>
-          <InputLabel htmlFor="email">Email</InputLabel>
-          <Input
+          <Label htmlFor="email">
+            Email
+          </Label>
+          <InputField
             size="small"
             type="text"
             id="email"
@@ -69,8 +73,8 @@ function LoginForm() {
           ) : null}
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <Input
+          <Label htmlFor="password">Password</Label>
+          <InputField
             id="password"
             type="password"
             name="password"

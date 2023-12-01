@@ -9,7 +9,7 @@ import { RestrictedRoute } from '../guards/RestrictedRoute';
 
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
-const ToursPage = lazy(() => import('../pages/ToursPage'));
+const ToursPage = lazy(() => import('../pages/ToursPage/ToursPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 function App() {

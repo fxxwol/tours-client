@@ -1,15 +1,16 @@
 import React from 'react';
-import { AuthBtn, AuthLink, AuthWrap } from './AuthNav.styled';
+import { AuthLink, AuthWrap } from './AuthNav.styled';
+import { Btn } from 'global/Button.styled';
 
 function AuthNav() {
   return (
     <AuthWrap>
-      <AuthBtn size="small">
+      <Btn size="small">
         <AuthLink to="/register">Sign up</AuthLink>
-      </AuthBtn>
-      <AuthBtn size="small">
+      </Btn>
+      <Btn size="small">
         <AuthLink to="/login">Sign in</AuthLink>
-      </AuthBtn>
+      </Btn>
     </AuthWrap>
   );
 }

@@ -1,5 +1,5 @@
-import { FormControl, Input, InputLabel } from '@mui/material';
-import { SubmitBtn } from './AuthForms.styled';
+import { FormControl } from '@mui/material';
+import { InputField, Label, SubmitBtn } from './AuthForms.styled';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authThunk';
@@ -63,8 +63,8 @@ function RegisterForm() {
       <FormTitle>Sign up to Journeezy</FormTitle>
       <AuthForm onSubmit={formik.handleSubmit}>
         <FormControl>
-          <InputLabel htmlFor="name">Name</InputLabel>
-          <Input
+          <Label htmlFor="name">Name</Label>
+          <InputField
             size="small"
             type="text"
             id="name"
@@ -80,8 +80,8 @@ function RegisterForm() {
           ) : null}
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="lastName">Last name</InputLabel>
-          <Input
+          <Label htmlFor="lastName">Last name</Label>
+          <InputField
             size="small"
             type="text"
             id="lastName"
@@ -97,8 +97,8 @@ function RegisterForm() {
           ) : null}
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="email">Email</InputLabel>
-          <Input
+          <Label htmlFor="email">Email</Label>
+          <InputField
             size="small"
             type="text"
             id="email"
@@ -114,8 +114,8 @@ function RegisterForm() {
           ) : null}
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <Input
+          <Label htmlFor="password">Password</Label>
+          <InputField
             id="password"
             type="password"
             name="password"

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NoCarsFoundContainer = styled.div`
+export const NoToursFoundContainer = styled.div`
   text-align: center;
   padding: 20px;
   width: fit-content;

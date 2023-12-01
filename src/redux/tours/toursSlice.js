@@ -46,5 +46,3 @@ export const toursSlice = createSlice({
             })
     }
 });
-
-export const { setFilters, setIsFiltered } = toursSlice.actions;

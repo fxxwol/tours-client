@@ -1,10 +1,10 @@
-import { Message, NoCarsFoundContainer } from './NoCars.styled';
+import { Message, NoToursFoundContainer } from './NoTours.styled';
 
 const NoTours = ({ message }) => {
   return (
-    <NoCarsFoundContainer>
+    <NoToursFoundContainer>
       <Message> {message || 'No tours were found :('}</Message>
-    </NoCarsFoundContainer>
+    </NoToursFoundContainer>
   );
 };
 

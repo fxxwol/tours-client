@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/238.6705ffa3.chunk.js","mappings":"mKAQA,UANA,WACE,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,aAET,C","sources":["pages/ToursPage.jsx"],"sourcesContent":["import React from 'react'\n\nfunction ToursPage() {\n  return (\n    <div>ToursPage</div>\n  )\n}\n\nexport default ToursPage"],"names":["_jsx","children"],"sourceRoot":""}

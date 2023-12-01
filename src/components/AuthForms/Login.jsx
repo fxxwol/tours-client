@@ -11,7 +11,6 @@ import {
   FormTitle,
 } from './AuthForms.styled';
 import { useAuth } from 'hooks/useAuth';
-import { theme } from 'global/Theme';
 
 function LoginForm() {
   const dispatch = useDispatch();

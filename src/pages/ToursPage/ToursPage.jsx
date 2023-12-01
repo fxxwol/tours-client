@@ -28,7 +28,6 @@ function ToursPage() {
     dispatch(getAll());
     dispatch(getCountries());
   }, [dispatch]);
-  console.log(filterLoading);
 
   return (
     <ToursSection>

@@ -47,7 +47,6 @@ function LoginForm() {
       formik.resetForm();
     },
   });
-  console.log(theme.palette.primary.main);
 
   return (
     <AuthFormCard>

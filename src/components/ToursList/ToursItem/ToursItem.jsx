@@ -1,6 +1,25 @@
-import { InfoLabel, InfoValue, TourCardContainer, TourDescription, TourInfo, TourTitle, ViewDetailsButton } from "./ToursItem.styled";
+import Modal from 'components/Modal/Modal';
+import {
+  InfoLabel,
+  InfoValue,
+  TourCardContainer,
+  TourDescription,
+  TourInfo,
+  TourTitle,
+  ViewDetailsButton,
+} from './ToursItem.styled';
+import { useState } from 'react';
 
-function ToursItem({tour}) {
+function ToursItem({ tour }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <TourCardContainer>
       <TourTitle>{tour.name}</TourTitle>
@@ -17,9 +36,10 @@ function ToursItem({tour}) {
         <InfoValue>&#8372;{tour.price}</InfoValue>
       </TourInfo>
       <TourDescription>{tour.description.substring(0, 150)}...</TourDescription>
-      <ViewDetailsButton>View Details</ViewDetailsButton>
+      <ViewDetailsButton onClick={openModal}>View Details</ViewDetailsButton>
+      {isModalOpen && <Modal onClose={closeModal} tour={tour} />}
     </TourCardContainer>
   );
 }
-// onClick={() => onViewDetails(tour._id)}
-export default ToursItem
+
+export default ToursItem;

@@ -8,7 +8,7 @@ import {
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import React from 'react';
-import { FilterForm, SearchButton } from './Filter.styled';
+import { FilterForm } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCountries,
@@ -18,6 +18,7 @@ import {
 import { setFilters, setIsFiltered } from 'redux/filter/filterSlice';
 import { throttle } from 'lodash';
 import { search } from 'redux/filter/filterThunk';
+import { PrimaryButton } from 'global/Button.styled';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -86,8 +87,8 @@ function Filter() {
           onChange={handleDateSelect}
         />
       </LocalizationProvider>
-      <SearchButton onClick={handleSubmit}>Search</SearchButton>
-      {isFiltered && <SearchButton onClick={handleReset}>Reset</SearchButton>}
+      <PrimaryButton onClick={handleSubmit}>Search</PrimaryButton>
+      {isFiltered && <PrimaryButton onClick={handleReset}>Reset</PrimaryButton>}
     </FilterForm>
   );
 }

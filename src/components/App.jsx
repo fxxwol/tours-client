@@ -5,11 +5,15 @@ import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { refresh } from 'redux/auth/authThunk';
 import { RestrictedRoute } from '../guards/RestrictedRoute';
-// import { PrivateRoute } from '../guards/PrivateRoute';
+import { PrivateRoute } from '../guards/PrivateRoute';
 
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ToursPage = lazy(() => import('../pages/ToursPage/ToursPage'));
+const CartPage = lazy(() => import('../pages/CartPage/CartPage'));
+const SubmittedPage = lazy(() =>
+  import('../pages/SubmittedPage/SubmittedPage')
+);
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 function App() {
@@ -29,21 +33,23 @@ function App() {
             <Route
               path="/register"
               element={
-                <RestrictedRoute
-                  redirectTo="/"
-                  component={<RegisterPage />}
-                />
+                <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
               }
             />
             <Route
               path="/login"
               element={
-                <RestrictedRoute
-                  redirectTo="/"
-                  component={<LoginPage />}
-                />
+                <RestrictedRoute redirectTo="/" component={<LoginPage />} />
               }
             />
+            <Route
+              path="/cart"
+              element={
+                <PrivateRoute redirectTo="/login" component={<CartPage />} />
+              }
+            >
+            </Route>
+              <Route path="/submit" element={<SubmittedPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

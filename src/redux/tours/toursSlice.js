@@ -5,7 +5,6 @@ export const toursSlice = createSlice({
     name: 'tours',
     initialState: {
         tours: [],
-        selected: {},
         isLoading: false,
         error: null,
     },

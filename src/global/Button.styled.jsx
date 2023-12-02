@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { Button } from "@mui/material";
-import variables from "./Variables";
+import styled from 'styled-components';
+import { Button } from '@mui/material';
+import variables from './Variables';
+import { Link } from 'react-router-dom';
 
 export const Btn = styled(Button)`
   && {
@@ -21,7 +22,7 @@ export const Btn = styled(Button)`
 `;
 
 export const PrimaryButton = styled.button`
-  background-color: ${variables.greenText};
+  background-color: ${props => props.bcg || variables.greenText};
   color: ${variables.whiteText};
   border-radius: 12px;
   display: flex;
@@ -35,11 +36,12 @@ export const PrimaryButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: ${variables.accentColor};
+    background-color: ${props =>
+      props.bcg ? '#b03636f2' : variables.accentColor};
   }
 `;
 
-export const StyledLink = styled(PrimaryButton).attrs({ as: 'a' })`
+export const StyledLink = styled(PrimaryButton).attrs({ as: Link })`
   text-decoration: none;
   cursor: pointer;
 `;

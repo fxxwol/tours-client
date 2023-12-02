@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavigationLink } from './Navigation.styled';
+import { Nav, NavigationLink } from './Navigation.styled';
 
 function Navigation() {
   return (
-    <nav>
+    <Nav>
       <NavigationLink to="/">Tours</NavigationLink>
-    </nav>
+      <NavigationLink to="/cart">Cart</NavigationLink>
+    </Nav>
   );
 }
 

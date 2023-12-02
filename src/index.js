@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter basename="/tours-client">
           <GlobalStyle />
           <ThemeProvider theme={theme}>
-          <App />
+            <App />
           </ThemeProvider>
         </BrowserRouter>
       </PersistGate>

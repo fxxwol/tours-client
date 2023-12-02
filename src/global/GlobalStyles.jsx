@@ -56,6 +56,7 @@ button {
   padding: 0;
   border: 0;
   outline: 0;
+  background-color: transparent;
 }
 html {
   scroll-behavior: smooth;

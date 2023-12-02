@@ -17,6 +17,8 @@ import {
   RentalInfo,
   RentalItem,
 } from './Modal.styled';
+import { useDispatch } from 'react-redux';
+import { addToCart } from 'redux/cart/cartThunk';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -28,9 +30,10 @@ const toggleBodyOverflow = toggle => {
   }
 };
 
-const Modal = ({ onClose, tour }) => {
+const Modal = ({ onClose, tour, hasBtn }) => {
   let { name, date, description, country, city, price, duration, amount } =
     tour;
+  const dispatch = useDispatch()
   useEffect(() => {
     toggleBodyOverflow(true);
     const onKeyDown = event => {
@@ -83,14 +86,16 @@ const Modal = ({ onClose, tour }) => {
               </RentalInfo>
             </RentalBlock>
             <Descr>{description}</Descr>
-            <StyledLink
-              href=""
+            {hasBtn &&
+              <StyledLink
+              to={"/cart"}
               width={168}
               height={44}
-              disabled={!amount && false}
+                disabled={!amount && false}
+                onClick={() => dispatch(addToCart(tour._id))}
             >
               Add to cart
-            </StyledLink>
+            </StyledLink>}
           </InfoWrapper>
         </ContentContainer>
       </ModalContainer>

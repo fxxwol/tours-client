@@ -37,7 +37,7 @@ function ToursItem({ tour }) {
       </TourInfo>
       <TourDescription>{tour.description.substring(0, 150)}...</TourDescription>
       <ViewDetailsButton onClick={openModal}>View Details</ViewDetailsButton>
-      {isModalOpen && <Modal onClose={closeModal} tour={tour} />}
+      {isModalOpen && <Modal onClose={closeModal} tour={tour} hasBtn={ true} />}
     </TourCardContainer>
   );
 }

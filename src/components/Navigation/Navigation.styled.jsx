@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import variables from 'global/Variables';
 
+export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+`
+
 export const NavigationLink = styled(NavLink)`
   color: ${variables.blackText};
   font-size: 20px;

@@ -1,7 +1,8 @@
-import Modal from 'components/Modals/Modal';
 import { useAuth } from 'hooks/useAuth';
 import { useState } from 'react';
 import {
+  AllButtonsWrap,
+  ButtonsWrap,
   InfoLabel,
   InfoValue,
   TourCardContainer,
@@ -11,9 +12,15 @@ import {
   ViewDetailsButton,
 } from './ToursItem.styled';
 import ToursDetailsModal from 'components/Modals/TourDetailsModal/TourDetailsModal';
+import { PrimaryButton } from 'global/Button.styled';
+import TourEditModal from 'components/Modals/TourEditModal/TourEditModal';
+import { useDispatch } from 'react-redux';
+import { deleteTourAndRefresh } from 'redux/tours/toursSlice';
 
 function ToursItem({ tour }) {
+  const dispatch = useDispatch()
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
   const {
     user: { role },
   } = useAuth();
@@ -25,6 +32,13 @@ function ToursItem({ tour }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+  const openEdit = () => {
+    setIsEditOpen(true);
+  };
+
+  const closeEdit = () => {
+    setIsEditOpen(false);
   };
 
   return (
@@ -43,16 +57,25 @@ function ToursItem({ tour }) {
         <InfoValue>&#8372;{tour.price}</InfoValue>
       </TourInfo>
       <TourDescription>{tour.description.substring(0, 150)}...</TourDescription>
-      <div>
+      <AllButtonsWrap>
         <ViewDetailsButton onClick={openModal}>View Details</ViewDetailsButton>
         {isAdmin && (
-          <>
-            <button>Edit</button>
-            <button>Remove</button>
-          </>
+          <ButtonsWrap>
+            <PrimaryButton width={50} height={40} onClick={openEdit}>
+              Edit
+            </PrimaryButton>
+            <PrimaryButton width={70} height={40} bcg={'#d24444f2'} onClick={() => dispatch(deleteTourAndRefresh(tour._id))}>
+              Remove
+            </PrimaryButton>
+          </ButtonsWrap>
         )}
-      </div>
-      {isModalOpen && <ToursDetailsModal onClose={closeModal} tour={tour} hasBtn={true} />}
+      </AllButtonsWrap>
+      {isModalOpen && (
+        <ToursDetailsModal onClose={closeModal} tour={tour} hasBtn={true} />
+      )}
+      {isEditOpen && (
+        <TourEditModal onClose={closeEdit} tour={tour} />
+      )}
     </TourCardContainer>
   );
 }

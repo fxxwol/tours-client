@@ -47,3 +47,12 @@ export const ViewDetailsButton = styled.button`
   }
 `;
 
+export const ButtonsWrap = styled.div`
+  display: flex;
+  gap: 5px;
+`
+export const AllButtonsWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`

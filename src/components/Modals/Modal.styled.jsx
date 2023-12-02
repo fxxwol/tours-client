@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import { AuthForm } from 'components/AuthForms/AuthForms.styled';
 import variables from 'global/Variables';
+import styled from 'styled-components';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -45,6 +46,10 @@ export const ModalContainer = styled.div`
 export const ContentContainer = styled.div`
   position: relative;
   padding: 40px 35px;
+`;
+
+export const TourForm = styled(AuthForm)`
+  margin-bottom: 20px;
 `;
 
 export const BtnClose = styled.button`

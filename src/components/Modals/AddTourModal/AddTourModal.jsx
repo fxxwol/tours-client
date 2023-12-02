@@ -1,18 +1,18 @@
-import { useDispatch } from 'react-redux';
-import Modal from '../Modal';
-import * as Yup from 'yup';
-import { addTourAndRefresh } from 'redux/tours/toursSlice';
-import { useFormik } from 'formik';
-import {
-  AuthForm,
-  AuthHelperText,
-  InputField,
-  Label,
-  SubmitBtn,
-} from 'components/AuthForms/AuthForms.styled';
 import { FormControl, TextField } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import {
+    AuthHelperText,
+    InputField,
+    Label,
+    SubmitBtn
+} from 'components/AuthForms/AuthForms.styled';
+import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { addTourAndRefresh } from 'redux/tours/toursSlice';
+import * as Yup from 'yup';
+import Modal from '../Modal';
+import { TourForm } from '../Modal.styled';
 
 const AddTourModal = ({ onClose }) => {
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const AddTourModal = ({ onClose }) => {
 
   return (
     <Modal onClose={onClose}>
-      <AuthForm onSubmit={formik.handleSubmit}>
+      <TourForm onSubmit={formik.handleSubmit}>
         <FormControl>
           <Label htmlFor="name">Name</Label>
           <InputField
@@ -205,9 +205,8 @@ const AddTourModal = ({ onClose }) => {
             <AuthHelperText>{formik.errors.amount}</AuthHelperText>
           ) : null}
         </FormControl>
-
-        <SubmitBtn type="submit">Add Tour</SubmitBtn>
-      </AuthForm>
+      </TourForm>
+      <SubmitBtn onClick={onClose}>Add tour</SubmitBtn>
     </Modal>
   );
 };

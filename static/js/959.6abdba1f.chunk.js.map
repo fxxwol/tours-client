@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/959.6abdba1f.chunk.js","mappings":"mKAQA,UANA,WACE,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,mBAET,C","sources":["pages/AdminOrdersPage.jsx"],"sourcesContent":["import React from 'react'\n\nfunction AdminOrdersPage() {\n  return (\n    <div>AdminOrdersPage</div>\n  )\n}\n\nexport default AdminOrdersPage"],"names":["_jsx","children"],"sourceRoot":""}

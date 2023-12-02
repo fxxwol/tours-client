@@ -4,7 +4,7 @@ import { login, logout, refresh, register } from "./authThunk";
 export const authSlice = createSlice({
     name: 'auth',
     initialState: {
-        user: { name: null},
+        user: { name: null, role: null},
         token: null,
         isLoggedIn: false,
         isRefreshing: false,
@@ -48,7 +48,7 @@ export const authSlice = createSlice({
                 state.isRefreshing = false;
             })
             .addCase(logout.fulfilled, (state) => {
-                state.user = { name: null, email: null };
+                state.user = { name: null, role: null };
                 state.token = null;
                 state.isLoggedIn = false;
             })

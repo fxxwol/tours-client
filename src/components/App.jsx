@@ -11,13 +11,15 @@ const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ToursPage = lazy(() => import('../pages/ToursPage/ToursPage'));
 const CartPage = lazy(() => import('../pages/CartPage/CartPage'));
+const AdminOrdersPage = lazy(() => import('../pages/AdminOrdersPage'));
 const SubmittedPage = lazy(() =>
   import('../pages/SubmittedPage/SubmittedPage')
 );
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 function App() {
-  const { isRefreshing } = useAuth();
+  const { isRefreshing, user: { role } } = useAuth();
+  const isAdmin = role === "admin"
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,14 +44,30 @@ function App() {
                 <RestrictedRoute redirectTo="/" component={<LoginPage />} />
               }
             />
-            <Route
-              path="/cart"
-              element={
-                <PrivateRoute redirectTo="/login" component={<CartPage />} />
-              }
-            >
-            </Route>
-              <Route path="/submit" element={<SubmittedPage />} />
+            {/* Admin Routes */}
+            {isAdmin && (
+              <>
+                <Route
+                  path="/admin/orders"
+                  element={<AdminOrdersPage />} 
+                />
+              </>
+            )}
+            {/* User Routes */}
+            {!isAdmin && (
+              <>
+                <Route
+                  path="/cart"
+                  element={
+                    <PrivateRoute
+                      redirectTo="/login"
+                      component={<CartPage />}
+                    />
+                  }
+                />
+                <Route path="/submit" element={<SubmittedPage />} />
+              </>
+            )}
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

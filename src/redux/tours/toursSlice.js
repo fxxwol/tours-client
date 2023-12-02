@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAll, getById } from "./toursThunk";
+import { addTour, deleteTour, getAll, getById, updateTour } from "./toursThunk";
 
 export const toursSlice = createSlice({
     name: 'tours',
@@ -24,17 +24,9 @@ export const toursSlice = createSlice({
                     error: null
                 }
             })
-            .addCase(getAll.rejected, (state, { payload }) => {
-                return {
-                    ...state,
-                    isLoading: false,
-                    error: payload
-                }
-            })
             .addCase(getById.fulfilled, (state, { payload }) => {
                 return {
                     ...state,
-                    selected: payload
                 }
             })
             .addCase(getById.rejected, (state, { payload }) => {
@@ -43,5 +35,38 @@ export const toursSlice = createSlice({
                     error: payload
                 }
             })
+            .addCase(addTour.rejected, (state, { payload }) => {
+                return {
+                    ...state,
+                    error: payload
+                }
+            })
+            .addCase(updateTour.rejected, (state, { payload }) => {
+                return {
+                    ...state,
+                    error: payload
+                }
+            })
+            .addCase(deleteTour.rejected, (state, { payload }) => {
+                return {
+                    ...state,
+                    error: payload
+                }
+            })
     }
 });
+
+export const addTourAndRefresh = (newTour) => async (dispatch) => {
+    await dispatch(addTour(newTour));
+    dispatch(getAll());
+};
+
+export const updateTourAndRefresh = (updatedTour) => async (dispatch) => {
+    await dispatch(updateTour(updatedTour));
+    dispatch(getAll());
+};
+
+export const deleteTourAndRefresh = (tourId) => async (dispatch) => {
+    await dispatch(deleteTour(tourId));
+    dispatch(getAll());
+};

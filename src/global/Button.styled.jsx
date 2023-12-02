@@ -20,7 +20,6 @@ export const Btn = styled(Button)`
     }
   }
 `;
-
 export const PrimaryButton = styled.button`
   background-color: ${props => props.bcg || variables.greenText};
   color: ${variables.whiteText};
@@ -33,7 +32,7 @@ export const PrimaryButton = styled.button`
   width: ${props => props.width || 100}px;
   height: ${props => props.height || 48}px;
   transition: background-color 280ms cubic-bezier(0.075, 0.82, 0.165, 1);
-
+  margin-bottom: ${props => props.margin}px;
   &:hover,
   &:focus {
     background-color: ${props =>

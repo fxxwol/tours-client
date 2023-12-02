@@ -8,4 +8,5 @@ export const List = styled.ul`
   column-gap: 50px;
   flex-wrap: wrap;
   margin-bottom: 100px;
+  mt
 `;

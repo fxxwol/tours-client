@@ -15,7 +15,7 @@ function UserMenu() {
     <UserWrapper>
       <UserEmail>{name}</UserEmail>
       <Btn>
-        <AuthLink onClick={() => dispatch(logout())}>Sign out</AuthLink>
+        <AuthLink to={'/'} onClick={() => dispatch(logout())}>Sign out</AuthLink>
       </Btn>
     </UserWrapper>
   );

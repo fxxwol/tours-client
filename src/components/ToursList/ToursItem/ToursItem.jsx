@@ -1,4 +1,6 @@
-import Modal from 'components/Modal/Modal';
+import Modal from 'components/Modals/Modal';
+import { useAuth } from 'hooks/useAuth';
+import { useState } from 'react';
 import {
   InfoLabel,
   InfoValue,
@@ -8,10 +10,15 @@ import {
   TourTitle,
   ViewDetailsButton,
 } from './ToursItem.styled';
-import { useState } from 'react';
+import ToursDetailsModal from 'components/Modals/TourDetailsModal/TourDetailsModal';
 
 function ToursItem({ tour }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const {
+    user: { role },
+  } = useAuth();
+  const isAdmin = role === 'admin';
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -36,8 +43,16 @@ function ToursItem({ tour }) {
         <InfoValue>&#8372;{tour.price}</InfoValue>
       </TourInfo>
       <TourDescription>{tour.description.substring(0, 150)}...</TourDescription>
-      <ViewDetailsButton onClick={openModal}>View Details</ViewDetailsButton>
-      {isModalOpen && <Modal onClose={closeModal} tour={tour} hasBtn={ true} />}
+      <div>
+        <ViewDetailsButton onClick={openModal}>View Details</ViewDetailsButton>
+        {isAdmin && (
+          <>
+            <button>Edit</button>
+            <button>Remove</button>
+          </>
+        )}
+      </div>
+      {isModalOpen && <ToursDetailsModal onClose={closeModal} tour={tour} hasBtn={true} />}
     </TourCardContainer>
   );
 }

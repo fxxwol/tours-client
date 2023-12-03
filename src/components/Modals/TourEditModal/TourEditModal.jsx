@@ -5,7 +5,6 @@ import {
   Label,
   SubmitBtn,
 } from 'components/AuthForms/AuthForms.styled';
-import dayjs from 'dayjs';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';

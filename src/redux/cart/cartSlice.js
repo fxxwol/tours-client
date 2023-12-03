@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addToCart, deleteFromCart, getCart, submit } from "./cartThunk";
+import { addToCart, deleteFromCart, deleteOrder, getAllOrders, getCart, submit, updateStatus } from "./cartThunk";
 
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: {
+        allOrders: [],
         orderedTours: [],
         totalPrice: 0,
         isLoading: false,
@@ -26,6 +27,26 @@ export const cartSlice = createSlice({
                 }
             })
             .addCase(getCart.rejected, (state, { payload }) => {
+                return {
+                    ...state,
+                    error: payload,
+                    isLoading: false
+                }
+            })
+            .addCase(getAllOrders.fulfilled, (state, { payload }) => {
+                return {
+                    ...state,
+                    allOrders: [...payload],
+                    isLoading: false
+                }
+            })
+            .addCase(getAllOrders.pending, (state,) => {
+                return {
+                    ...state,
+                    isLoading: true
+                }
+            })
+            .addCase(getAllOrders.rejected, (state, { payload }) => {
                 return {
                     ...state,
                     error: payload,
@@ -74,3 +95,13 @@ export const cartSlice = createSlice({
             })
     }
 });
+
+export const updateStatusAndRefresh = (updatedOrder) => async (dispatch) => {
+    await dispatch(updateStatus(updatedOrder));
+    dispatch(getAllOrders());
+};
+
+export const deleteOrderAndRefresh = (orderId) => async (dispatch) => {
+    await dispatch(deleteOrder(orderId));
+    dispatch(getAllOrders());
+};

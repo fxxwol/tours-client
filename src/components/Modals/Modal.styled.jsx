@@ -13,10 +13,19 @@ export const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
 `;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 13px;
+`;
 
 export const ModalContainer = styled.div`
   position: fixed;
   top: 50%;
+  width: auto;
   max-width: 541px;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -69,6 +78,7 @@ export const CloseIcon = styled.svg`
   height: 24px;
   stroke: ${variables.blackText};
 `;
+
 
 export const InfoWrapper = styled.div`
   width: 100%;

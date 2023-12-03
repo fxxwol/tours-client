@@ -43,9 +43,9 @@ export const deleteTour = createAsyncThunk(
 );
 export const updateTour = createAsyncThunk(
     "tours/updateTour",
-    async (newOrder, { rejectWithValue }) => {
+    async ({ id, ...newTour }, { rejectWithValue }) => {
         try {
-            const res = await axios.patch(`/tours/${newOrder.id}`, newOrder);
+            const res = await axios.patch(`/tours/${id}`, {...newTour.newTour});
             return res.data;
         } catch (error) {
             return rejectWithValue(error);

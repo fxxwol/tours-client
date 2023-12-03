@@ -10,31 +10,21 @@ import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import Modal from '../Modal';
-import {TourForm } from '../Modal.styled';
+import { TourForm } from '../Modal.styled';
 import { updateTourAndRefresh } from 'redux/tours/toursSlice';
 
 const TourEditModal = ({ onClose, tour }) => {
   const dispatch = useDispatch();
 
-  const AddSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    date: Yup.date()
-      .min(new Date(), 'Date must be in the future')
-      .required('Date is required'),
-    description: Yup.string().required('Description is required'),
-    amount: Yup.number()
-      .min(0, 'Amount must be at least 0')
-      .required('Amount is required'),
-    country: Yup.string().required('Country is required'),
-    city: Yup.string().required('City is required'),
-    price: Yup.number()
-      .min(1, 'Price must be at least 1')
-      .required('Price is required'),
-    duration: Yup.number()
-      .min(1, 'Duration must be at least 1')
-      .required('Duration is required'),
+  const EditSchema = Yup.object().shape({
+    name: Yup.string(),
+    description: Yup.string(),
+    amount: Yup.number().min(0, 'Amount must be at least 0'),
+    country: Yup.string(),
+    city: Yup.string(),
+    price: Yup.number().min(1, 'Price must be at least 1'),
+    duration: Yup.number().min(1, 'Duration must be at least 1'),
   });
-  console.log(dayjs(tour.date).format('DD/MM/YYYY').toString());
   const formik = useFormik({
     initialValues: {
       name: tour.name,
@@ -49,7 +39,7 @@ const TourEditModal = ({ onClose, tour }) => {
     validate: values => {
       const errors = {};
       try {
-        AddSchema.validateSync(values, { abortEarly: false });
+        EditSchema.validateSync(values, { abortEarly: false });
       } catch (validationErrors) {
         validationErrors.inner.forEach(error => {
           errors[error.path] = error.message;
@@ -59,8 +49,9 @@ const TourEditModal = ({ onClose, tour }) => {
       return errors;
     },
     onSubmit: newTour => {
-      dispatch(updateTourAndRefresh(newTour));
+      dispatch(updateTourAndRefresh({ id: tour._id, newTour }));
       formik.resetForm();
+      onClose();
     },
   });
 
@@ -188,8 +179,8 @@ const TourEditModal = ({ onClose, tour }) => {
             <AuthHelperText>{formik.errors.amount}</AuthHelperText>
           ) : null}
         </FormControl>
+        <SubmitBtn type="submit">Save changes</SubmitBtn>
       </TourForm>
-      <SubmitBtn onClick={onClose}>Save changes</SubmitBtn>
     </Modal>
   );
 };

@@ -25,11 +25,34 @@ export const getCart = createAsyncThunk(
     }
 )
 
+export const getAllOrders = createAsyncThunk(
+    'orders/getAllOrders',
+    async (_, { rejectWithValue }) => {
+        try {
+            const res = await axios.get('/orders/');
+            return res.data;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    }
+)
+
 export const submit = createAsyncThunk(
     "orders/submit",
     async (_, { rejectWithValue }) => {
         try {
             const res = await axios.post('/orders/submit/');
+            return res.data;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+);
+export const updateStatus = createAsyncThunk(
+    "orders/updateStatus",
+    async ({_id, status}, { rejectWithValue }) => {
+        try {
+            const res = await axios.patch(`/orders/${_id}/status`, {status});
             return res.data;
         } catch (error) {
             return rejectWithValue(error);
@@ -42,6 +65,17 @@ export const deleteFromCart = createAsyncThunk(
     async (id, { rejectWithValue }) => {
         try {
             const res = await axios.delete(`/orders/tours/${id}`);
+            return res.data;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+);
+export const deleteOrder = createAsyncThunk(
+    "orders/deleteOrder",
+    async (id, { rejectWithValue }) => {
+        try {
+            const res = await axios.delete(`/orders/${id}`);
             return res.data;
         } catch (error) {
             return rejectWithValue(error);

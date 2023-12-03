@@ -49,7 +49,7 @@ function ToursPage() {
     <ToursSection>
       {!countryLoading && <Filter />}
       {isAdmin && (
-        <PrimaryButton width={50} height={40} margin={20} onClick={openModal}>
+        <PrimaryButton width={50} height={40} marginb={20} onClick={openModal}>
           Add
         </PrimaryButton>
       )}

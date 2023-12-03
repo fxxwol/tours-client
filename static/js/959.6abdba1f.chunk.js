@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[959],{2959:function(e,r,t){t.r(r);t(2791);var a=t(184);r.default=function(){return(0,a.jsx)("div",{children:"AdminOrdersPage"})}}}]);
-//# sourceMappingURL=959.6abdba1f.chunk.js.map

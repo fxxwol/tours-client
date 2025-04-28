@@ -43,6 +43,17 @@ function ToursItem({ tour }) {
 
   return (
     <TourCardContainer>
+      <div style={{width: "100%", marginBottom: '12px', }}>
+
+      <img src={tour.image} alt={tour.name}style={
+        {
+          width: '100%',
+          height: "200px",
+          objectFit: 'cover',
+          borderRadius: '8px'
+        }
+      }/>
+      </div>
       <TourTitle>{tour.name}</TourTitle>
       <TourInfo>
         <InfoLabel>City:</InfoLabel>

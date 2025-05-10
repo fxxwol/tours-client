@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/tours-client/static/css/main.cd2e038f.css",
-    "main.js": "/tours-client/static/js/main.3c97bfe8.js",
+    "main.js": "/tours-client/static/js/main.277c4d5a.js",
     "static/js/977.4ca62655.chunk.js": "/tours-client/static/js/977.4ca62655.chunk.js",
     "static/js/716.8d83e9ea.chunk.js": "/tours-client/static/js/716.8d83e9ea.chunk.js",
     "static/js/294.683de69e.chunk.js": "/tours-client/static/js/294.683de69e.chunk.js",
-    "static/js/866.770d0bb9.chunk.js": "/tours-client/static/js/866.770d0bb9.chunk.js",
-    "static/js/893.3a16c369.chunk.js": "/tours-client/static/js/893.3a16c369.chunk.js",
+    "static/js/866.290e9d76.chunk.js": "/tours-client/static/js/866.290e9d76.chunk.js",
+    "static/js/893.994c3c39.chunk.js": "/tours-client/static/js/893.994c3c39.chunk.js",
     "static/js/706.6cc3e651.chunk.js": "/tours-client/static/js/706.6cc3e651.chunk.js",
     "static/js/72.16688ea8.chunk.js": "/tours-client/static/js/72.16688ea8.chunk.js",
     "static/js/310.6bed7a7e.chunk.js": "/tours-client/static/js/310.6bed7a7e.chunk.js",
@@ -17,12 +17,12 @@
     "static/media/sprite.svg": "/tours-client/static/media/sprite.d4d399d02342a8874cdacb9c731cfc65.svg",
     "index.html": "/tours-client/index.html",
     "main.cd2e038f.css.map": "/tours-client/static/css/main.cd2e038f.css.map",
-    "main.3c97bfe8.js.map": "/tours-client/static/js/main.3c97bfe8.js.map",
+    "main.277c4d5a.js.map": "/tours-client/static/js/main.277c4d5a.js.map",
     "977.4ca62655.chunk.js.map": "/tours-client/static/js/977.4ca62655.chunk.js.map",
     "716.8d83e9ea.chunk.js.map": "/tours-client/static/js/716.8d83e9ea.chunk.js.map",
     "294.683de69e.chunk.js.map": "/tours-client/static/js/294.683de69e.chunk.js.map",
-    "866.770d0bb9.chunk.js.map": "/tours-client/static/js/866.770d0bb9.chunk.js.map",
-    "893.3a16c369.chunk.js.map": "/tours-client/static/js/893.3a16c369.chunk.js.map",
+    "866.290e9d76.chunk.js.map": "/tours-client/static/js/866.290e9d76.chunk.js.map",
+    "893.994c3c39.chunk.js.map": "/tours-client/static/js/893.994c3c39.chunk.js.map",
     "706.6cc3e651.chunk.js.map": "/tours-client/static/js/706.6cc3e651.chunk.js.map",
     "72.16688ea8.chunk.js.map": "/tours-client/static/js/72.16688ea8.chunk.js.map",
     "310.6bed7a7e.chunk.js.map": "/tours-client/static/js/310.6bed7a7e.chunk.js.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.3c97bfe8.js"
+    "static/js/main.277c4d5a.js"
   ]
 }

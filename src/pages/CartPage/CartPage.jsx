@@ -38,7 +38,7 @@ function CartPage() {
         <SubmitWrap>
           <TotalText>
             <strong> Total price: </strong>
-            {totalPrice}
+            {totalPrice} ₴
           </TotalText>
           <StyledLink
             to={'/submit'}

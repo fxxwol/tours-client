@@ -20,7 +20,7 @@ function CartItem({ tour }) {
       <CartTourTitle onClick={openModal}>{tour.tour.name}</CartTourTitle>
       <PriceWrap>
         <p>
-          ${tour.tour.price} x {tour.amount}
+          {tour.tour.price} x {tour.amount} ₴
         </p>
         <PrimaryButton
           bcg={'#d24444f2'}

@@ -62,7 +62,7 @@ const OrderRow = ({ order, count }) => {
                 </tr>
               </thead>
               <tbody>
-                {tours.map(tour => (
+                {tours?.map(tour => (
                   <TourRow
                     key={tour._id}
                     tour={tour.tour}
